@@ -1,12 +1,7 @@
-import random
-
-def randomQuickSort( inicio, fim, vetor ) :
+def quickSort( inicio, fim, vetor ) :
 
     if inicio >= fim :
         return
-
-    randomPivot = random.randint( inicio, fim - 1 )
-    vetor[inicio], vetor[randomPivot] = vetor[randomPivot], vetor[inicio]
 
     pivot = inicio
     esquerda = inicio + 1
@@ -27,8 +22,8 @@ def randomQuickSort( inicio, fim, vetor ) :
 
     vetor [ esquerda - 1 ], vetor [ pivot ] = vetor [ pivot ], vetor [ esquerda - 1 ]
 
-    randomQuickSort ( inicio, esquerda-1, vetor )
+    quickSort ( inicio, esquerda-1, vetor )
     
-    randomQuickSort ( direita, fim, vetor)
+    quickSort ( direita, fim, vetor)
 
     return vetor

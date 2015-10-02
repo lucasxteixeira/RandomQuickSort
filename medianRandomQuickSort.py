@@ -16,7 +16,7 @@ def valorMedio ( vetor, inicio, fim ):
         return pivot3
 
 
-def quickSort ( inicio, fim, vetor ) :
+def medianRandomQuickSort ( inicio, fim, vetor ) :
 
 
     if inicio >= fim :
@@ -24,9 +24,7 @@ def quickSort ( inicio, fim, vetor ) :
 
     medio = valorMedio( vetor, inicio, fim )
 
-
     vetor[inicio], vetor[medio] = vetor[medio], vetor[inicio]
-
 
 
     pivot = inicio
@@ -48,9 +46,8 @@ def quickSort ( inicio, fim, vetor ) :
 
     vetor [ esquerda - 1 ], vetor [ pivot ] = vetor [ pivot ], vetor [ esquerda - 1 ]
 
+    medianRandomQuickSort ( inicio, esquerda-1, vetor )
 
-    quickSort ( inicio, esquerda-1, vetor )
-
-    quickSort ( direita, fim, vetor)
+    medianRandomQuickSort ( direita, fim, vetor)
 
     return vetor
